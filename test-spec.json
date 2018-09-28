@@ -25,7 +25,7 @@
             "operationId" : "viewObjectLogs",
             "parameters" : [
                {
-                  "required" : "true",
+                  "required" : true,
                   "in" : "path",
                   "enum" : [
                      "enrollments",
@@ -37,14 +37,14 @@
                   "description" : "enrollments/users/companies"
                },
                {
-                  "required" : "true",
+                  "required" : true,
                   "in" : "path",
                   "name" : "id",
                   "type" : "integer",
                   "description" : "ID"
                },
                {
-                    "required" : "true",
+                    "required" : true,
                     "in" : "body",
                     "name" : "payload",
                     "schema" : {
