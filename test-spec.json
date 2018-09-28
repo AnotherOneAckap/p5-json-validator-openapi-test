@@ -1,0 +1,78 @@
+{
+   "info" : {
+      "version" : "1.0.0",
+      "contact" : {
+         "email" : "anotheroneackap@gmail.com"
+      },
+      "termsOfService" : "http://swagger.io/terms/",
+      "title" : "API",
+      "license" : {
+         "url" : "http://www.apache.org/licenses/LICENSE-2.0.html",
+         "name" : "Apache 2.0"
+      },
+      "description" : ""
+   },
+   "swagger" : "2.0",
+   "produces" : [
+      "application/json; charset=UTF-8"
+   ],
+   "consumes" : [
+      "application/json; charset=UTF-8"
+   ],
+   "paths" : {
+      "/logs/{object}/{id}/view.json" : {
+         "post" : {
+            "operationId" : "viewObjectLogs",
+            "parameters" : [
+               {
+                  "required" : "true",
+                  "in" : "path",
+                  "enum" : [
+                     "enrollments",
+                     "users",
+                     "companies"
+                  ],
+                  "name" : "object",
+                  "type" : "string",
+                  "description" : "enrollments/users/companies"
+               },
+               {
+                  "required" : "true",
+                  "in" : "path",
+                  "name" : "id",
+                  "type" : "integer",
+                  "description" : "ID"
+               },
+               {
+                    "required" : "true",
+                    "in" : "body",
+                    "name" : "payload",
+                    "schema" : {
+                        "type":"object",
+                        "properties": {
+                            "id": {
+                                "example" : 1,
+                                "type":"integer"
+                            },
+                            "hash": {
+                                "example" : "0123456789abcdef",
+                                "type":"string"
+                           }
+                        }
+                    }
+               }
+            ],
+            "summary" : "Log",
+            "responses" : {
+               "default" : {
+                  "description" : "Default response"
+               }
+            },
+            "description" : "",
+            "tags" : [
+               "logs"
+            ]
+         }
+      }
+    }
+}
